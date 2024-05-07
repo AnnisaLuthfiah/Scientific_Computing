@@ -72,22 +72,22 @@ Jawaban Quiz 2
 
 import numpy as np
 
-f_quiz2 = lambda x:np.exp(x) -2*x
+f_quiz2 = lambda x: np.exp(x) - 2*x
 f_prime_quiz2 = lambda x: np.exp(x) - 2
 
 def my_newton(f, df, x0, tol):
-  # output is an estimation of the root of f
-  # using the Newton Raphson method
-  # recusrsive implementation
+    # Output is an estimation of the root of f
+    # using the Newton-Raphson method
+    # Recursive implementation
 
-  if abs(f(x0)) < tol:
-    return x0
-  else:
-    return my_newton(f, df, x0 - f(x0)/df(x0), tol)
+    if abs(f(x0)) < tol:
+        return x0
+    else:
+        return my_newton(f, df, x0 - f(x0)/df(x0), tol)
 
-    estimate_quiz2 = my_newton(f_quiz2, f_prime_quiz2, 1, 0.001)
+estimate_quiz2 = my_newton(f_quiz2, f_prime_quiz2, 1, 0.001)
 
-    print("Quiz 2 Newton Raphson")
-    print("estimate =", estimate_quiz2)
-    print("f(estimate) =", f_quiz2(estimate_quiz2))
-    print("sqrt(2) =", np.sqrt(2))
+print("Quiz 2 Newton Raphson")
+print("estimate =", estimate_quiz2)
+print("f(estimate) =", f_quiz2(estimate_quiz2))
+print("sqrt(2) =", np.sqrt(2))
